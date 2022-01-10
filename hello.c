@@ -1,11 +1,17 @@
 #include <stdio.h>
 
-int main(int argc, char** argv){
-	printf("Hello world!\n");
-	if(argc > 1){
-		printf("You have provided %d arguments\n", argc);
-	} else {
-		printf("You have not provided any additional arguments\n");
-	}
-	return 0;
+int main(int argc, char** argv) {
+    if (argc > 1) {
+        for (int argIndex = 0; argIndex < argc; ++argIndex) {
+            printf("\nArgument %d: %s", argIndex, argv[argIndex]);
+            if (argIndex == 0) {
+                printf(" (app name)");
+            }
+        }
+        printf("\nYou have provided %d additional arguments", argc - 1);
+    } else {
+        printf("\nYou have not provided any arguments");
+    }
+    printf("\n\n");
+    return 0;
 }
